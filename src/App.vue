@@ -1,22 +1,25 @@
-<script setup>
+<script>
 // Lógica do componente / JavaScript //
 
-import { ref, onMounted } from 'vue'
+// import { ref, onMounted } from 'vue'
 
-const contador = ref(0)
+// const contador = ref(0)
 
-function incrementarContador() {
-    contador.value++
-}
-function decrementarContador() {
-    contador.value--
-}
+// function incrementarContador() {
+//     contador.value++
+// }
+// function decrementarContador() {
+//     contador.value--
+// }
+// function zerarContador() {
+//     contador.value
+// }
 
-onMounted (() => {
-  console.log(`O valor do contador é ${contador.value}`)
-})
+// onMounted (() => {
+//   console.log(`O valor do contador é ${contador.value}`)
+// })
 
-/* API DE OPÇÕES
+/* API DE OPÇÕES */
 
   export default {
   data() {
@@ -29,19 +32,27 @@ onMounted (() => {
       this.contador++
     },
     decrementarContador(){
-      this.contador--
+      if (this.contador > 0) {
+        this.contador--
+      } // else {
+      //   this.contador = this.contador - 0
+      // }
+    },
+    zerarContador() {
+      this.contador = 0
     }
   },
   mounted() {
     console.log(` valor inicial do contador é ${this.contador}`)
   }
-}*/
+}
 </script>
 <template>
   <!-- Template do componente / HTML5 -->
 
   <button @click="incrementarContador">Incrementar</button>
   <button @click="decrementarContador">Decrementar</button>
+  <button @click="zerarContador">Zerar</button>
   <p>O valor do contador é: {{ contador }}</p>
 </template>
 <style scoped>
