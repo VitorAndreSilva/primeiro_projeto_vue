@@ -1,6 +1,24 @@
-<script>
+<script setup>
 // Lógica do componente / JavaScript //
-export default {
+
+import { ref, onMounted } from 'vue'
+
+const contador = ref(0)
+
+function incrementarContador() {
+    contador.value++
+}
+function decrementarContador() {
+    contador.value--
+}
+
+onMounted (() => {
+  console.log(`O valor do contador é ${contador.value}`)
+})
+
+/* API DE OPÇÕES
+
+  export default {
   data() {
     return {
       contador: 0
@@ -17,7 +35,7 @@ export default {
   mounted() {
     console.log(` valor inicial do contador é ${this.contador}`)
   }
-}
+}*/
 </script>
 <template>
   <!-- Template do componente / HTML5 -->
