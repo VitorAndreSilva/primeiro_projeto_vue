@@ -15,7 +15,7 @@ export default {
     }
   },
   mounted() {
-    console.log(` valor inicial do contador é ${this.contador}`)
+    console.log(` valor inicial do contador é ${this.contador}.`)
   }
 }
 </script>
